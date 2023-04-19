@@ -5,7 +5,7 @@ const resultValue = $.querySelector("h2");
 const convertBtn = $.querySelector("#convert");
 const resetBtn = $.querySelector("#reset");
 const changeBtn = $.querySelector("#change");
-let placholderValue = inputElm.getAttribute("placeholder");
+let placholderValue = inputElm.placeholder
 let result;
 
 let oldPlacholder = "℉";
@@ -23,19 +23,15 @@ resetBtn.addEventListener("click", function () {
 //********************************************convertBtn */
 convertBtn.addEventListener("click", function () {
   let inputValue = inputElm.value;
-  let counter = 0;
-  [...inputValue].forEach(function (ch) {
-    if (ch >= "0" && ch <= "9") counter++;
-  });
-  console.log(counter);
-  if ([...inputValue].length == 0) {
+  console.log(inputElm.value);
+  if (inputValue==='') {
     resultValue.textContent = "Input is empety";
     resultValue.classList.add("red");
-  } else if (counter === [...inputValue].length) {
+  } else if (!isNaN(inputValue)) {
     if (placholderValue === "℃") {
-      result = (parseInt(inputValue) * 9) / 5 + 32;
+      result = ((inputValue * 9) / 5) + 32;
     } else {
-      result = ((parseInt(inputValue) - 32) * 5) / 9;
+      result = ((inputValue - 32) * 5) / 9;
     }
     $.title = "JS " + placholderValue + " to " + oldPlacholder;
     resultValue.classList.remove("red");
@@ -52,13 +48,13 @@ convertBtn.addEventListener("click", function () {
 });
 //******************************changebtn */
 changeBtn.addEventListener("click", function () {
-  placholderValue = inputElm.getAttribute("placeholder");
+  placholderValue = inputElm.placeholder
   oldPlacholder = placholderValue;
   if (placholderValue === "℃") {
-    inputElm.setAttribute("placeholder", "℉");
+    inputElm.placeholder="℉"
     placholderValue = "℉";
   } else {
-    inputElm.setAttribute("placeholder", "℃");
+    inputElm.placeholder="℃";
     placholderValue = "℃";
   }
 
