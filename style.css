@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+   
+    background-image: linear-gradient(to bottom right, rgb(0, 255, 213), rgb(0, 17, 255));
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    width: 450px;
+    align-items: center;
+}
+#inputElm{
+  height: 40px;
+    width: 200px;
+    font-size: 36px;
+}
+.bottonsElm{
+    width: 450px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+.button{
+    
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-image: linear-gradient(to bottom right, rgb(0, 255, 213), rgb(0, 17, 255));
+color: white;
+}
+button:hover{
+    background-image: linear-gradient(to bottom right, rgb(89, 0, 255), rgb(0, 17, 255));
+}
+h1,h2{color: white;}
+.red{color:red;}
+.green{color: rgb(0, 43, 0);}
+.black{color:rgb(0, 0, 0);}
